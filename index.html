@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="color-scheme" content="dark light"> -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>SuperLogic</title>
+</head>
+<body>
+
+    <!-- Crypto Login -->
+
+    <!-- <component @login></component> -->
+    <!-- <resolve>
+        var count = new Reactive("count",0);
+    </resolve>
+    <resolve @forever = "1000">
+        count.setValue(count.getValue() + 1)
+    </resolve>
+    <reactive @count></reactive> -->
+    <!-- <label for="name">Name:</label>
+    <input id="name">
+    <label for="password">Password:</label>
+    <input id="password">
+    <button id="login">Login</button>
+    <reactive @value>Input ?</reactive> -->
+
+    <!-- Calculator -->
+
+    <!-- <component @calculator></component> -->
+
+    <!-- To Do List -->
+
+    <!-- <nav class="navbar dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light">To Do List</a>
+          <form class="d-flex" id="searchForm" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" id="searchBar" aria-label="Search">
+            <button class="btn btn-success" type="submit" id="searchButton">Search</button>
+          </form>
+        </div>
+      </nav>
+
+    <form id="form" class="container mt-4">
+        <div class="mb-3">
+            <label class="form-label" for="name">Item Name</label>
+            <input class="form-control" placeholder="Item Name" id="name" name="name">
+            <div class="form-text">Add A Small Title So That You Will Recognize It As Soon As Possible (ASAP)</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" placeholder="Description" name="description"></textarea>
+            <div class="form-text">Add A Brief Discription So That You Know Exactly What You Need To Do. See Formating Tips To Make Your Description More Good</div>
+            <div class="accordion mt-3" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Formating tips
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-5 breakword">
+                      <h2>How To format Description</h2>
+                      <hr>
+                      <h3><code>Heading With Heights</code></h3>
+                      <p>To make heading With heights your Description, place an hash, number sign, pound or octothrope on both sides of the text and add a number of the height
+                        <br>
+                        <br>
+                        #text#1
+                        <br>
+                        #text#2
+                        <br>
+                        #text#3
+                        <br>
+                        #text#4
+                        <br>
+                        #text#5
+                        <br>
+                        #text#6
+                    </p>
+                      <h4><code>Preview</code></h4>
+                      <h1>text</h1>
+                      <h2>text</h4>
+                      <h3>text</h4>
+                      <h4>text</h4>
+                      <h5>text</h5>
+                      <h6>text</h6>
+                      <hr>
+                      <h3><code>Italic</code></h3>
+                      <p>To italicize your Description, place an underscore on both sides of the text
+                        <br>
+                        <br>
+                        _text_</p>
+                      <h4><code>Preview</code></h4>
+                      <h4><em>text</em></h4>
+                      <hr>
+                      <h3><code>Bold</code></h3>
+                      <p>To bold your Description, place an asterisk on both sides of the text
+                        <br>
+                        <br>
+                        *text*</p>
+                      <h4><code>Preview</code></h4>
+                      <h4><strong>text</strong></h4>
+                      <hr>
+                      <h3><code>Strikethrough</code></h3>
+                      <p>To strikethrough your Description, place a tilde on both sides of the text
+                        <br>
+                        <br>
+                        ~text~</p>
+                      <h4><code>Preview</code></h4>
+                      <h4><s>text</s></h4>
+                      <hr>
+                      <h3><code>Code/Monospace</code></h3>
+                      <p>To code/monospace your Description, place three backticks on both sides of the text
+                        <br>
+                        <br>
+                        ```text```</p>
+                      <h4><code>Preview</code></h4>
+                      <h4><code>text</code></h4>
+                      <hr>
+                      <h3><code>Heading</code></h3>
+                      <p>To add the item heading in your Description, place three double quotes
+                        <br>
+                        <br>
+                        """</p>
+                        <h4><code>Preview</code></h4>
+                        <h4><reactive @inpval></reactive></h4>
+                      <hr>
+                      <h3><code>Links</code></h3>
+                      <p>To add links to your Description, place two backticks on both sides of the url
+                        <br>
+                        <br>
+                        ``https://google.com``</p>
+                      <h4><code>Preview</code></h4>
+                      <h4><a href="https://google.com" target="_blank">https://google.com</a></h4>
+                      <hr>
+                      <h3><code>Images</code></h3>
+                      <p>To add images to your Description, place a question mark on both sides of the url
+                        <br>
+                        <br>
+                        ?https://static.whatsapp.net/rsrc.php/ym/r/36B424nhiL4.svg?</p>
+                      <h4><code>Preview</code></h4>
+                      <h4><img src="https://static.whatsapp.net/rsrc.php/ym/r/36B424nhiL4.svg" alt=""></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <button class="btn btn-primary" type="submit">ADD +</button>
+    </form>
+
+    <div id="items" class="container mt-5">
+    </div> -->
+
+    <!-- Study Status
+
+    <div id="container"></div> -->
+
+    <!-- <resolve>var counter = new Reactive("counter",0);</resolve>
+    <reactive @counter></reactive>
+    <button onclick="counter.setValue(counter.getValue() + 1)">count</button> -->
+    
+    <script src="modules/structure.module.js"></script>
+    <script src="modules/collection.module.js"></script>
+    <script src="modules/boolean.module.js"></script>
+    <script src="modules/date.module.js"></script>
+    <script src="modules/math.module.js"></script>
+    <script src="modules/routine.module.js"></script>
+    <script src="modules/component.module.js"></script>
+    <script src="modules/reactive.module.js"></script>
+    <script src="modules/safety.module.js"></script>
+    <script src="modules/storage.module.js"></script>
+    <script src="modules/module.module.js"></script>
+    <script src="modules/resolve.module.js"></script>
+    <script src="modules/test.module.js"></script>
+    <script src="modules/dom.module.js"></script>
+    <script src="modules/route.module.js"></script>
+
+    <script>
+
+      on("mousedown",function (){
+        window.onmousemove = () => {
+          send("mover", {
+            x:mouseX,
+            y:mouseY
+          })
+        }
+      })
+
+      on("mouseup", function (){
+          window.onmousemove = () => {}
+      })
+      </script>
+    
+    <!-- <script src="crpytologin.js"></script> -->
+    <!-- <script src="calculator.js"></script> -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- <script src="todo.js"></script> -->
+    <!-- <script src="chapters.js"></script>
+    <script src="studystatus.js"></script> -->
+</body>
+</html>

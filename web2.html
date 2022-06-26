@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperLogic Routes</title>
+</head>
+<body>
+
+    <div style="
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    "></div>
+    <section style="
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    "></section>
+    <script src="modules/storage.module.js"></script>
+    <script src="modules/route.module.js"></script>
+    <script src="modules/dom.module.js"></script>
+
+    <script>
+        hue = 0;
+
+        rootElement.css("background-color","#ffdddd")
+
+        function updatePosition(x,y){
+            hue++
+            $("div").css({
+                top:y,
+                left:x
+            })
+
+            rootElement.css("filter",["hue-rotate(",hue,"deg)"])
+        }
+
+        function updatePositionT(x,y){
+            $("section").css({
+                top:y,
+                left:x
+            })
+            rootElement.css("filter",["hue-rotate(",hue,"deg)"])
+        }
+
+        let moverRoute = new Listen("mover");
+
+        moverRoute.add((e) => {
+            updatePosition(e.x,e.y)
+            body.add($("div").clone());
+        })
+        moverRoute.add((e) => {
+            updatePositionT(window.innerWidth - e.x,window.innerHeight - e.y)
+            body.add($("section").clone());
+        })
+
+        on("mousedown", function (){
+            window.onmousemove = () => {
+                updatePosition(mouseX,mouseY)
+                updatePositionT(window.innerWidth - mouseX,window.innerHeight - mouseY);
+                body.add($("div").clone());
+                body.add($("section").clone());
+            }
+        })
+        on("mouseup", function (){
+            window.onmousemove = () => {}
+        })
+    </script>
+</body>
+</html>
