@@ -1,5 +1,7 @@
-index.html
-web2.html
+*.html
+#########
+#Projects
+
 calculator.js
 chapters.js
 studystatus.js
