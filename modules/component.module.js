@@ -53,7 +53,7 @@ class Component{
         this.generaterFunction = generaterFunction;
     }
 
-    initOn(indexOrElement = 0,args = []){
+    initOn(indexOrElement = 0,...args){
         let elem;
         let index = 0;
         let comps = Array.from(document.querySelectorAll("component")).filter((e) => {
@@ -91,13 +91,13 @@ class Component{
 
 function html(string, ...values){
     let a = document.createElement("div");
-    let newstring = ""
+    let newstring = "";
     if(typeof string == "string"){
         newstring = string;
     }
     else{
         string.forEach((str,i) => {
-            newstring += str + values[i];
+            newstring += str + (values.length > i ? values[i] : "");
         })
     }
     a.innerHTML = newstring;
